@@ -1,0 +1,21 @@
+{
+  "name": "rossettini-map",
+  "authors": [
+    "Yoland Gao <yoland5286@gmail.com>"
+  ],
+  "description": "Old ODS map",
+  "main": "",
+  "license": "GPLv3",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "^1.0.3"
+  }
+}
