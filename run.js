@@ -16,7 +16,7 @@ function triggerModal(){
 
 $('#modal').on('show.bs.modal', function(){
     $('#modal').find('.modal-body').html(
-        "<img style='max-height: 90%; max-width: 100%;' src=\'assets/images/{0}.jpg\'/>"
+        "<img style='max-height: 500px; max-width: 100%;' src=\'assets/images/{0}.jpg\'/>"
             .format(location.hash.split("#")[1])
     );
 });
