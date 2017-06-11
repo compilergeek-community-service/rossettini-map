@@ -16,7 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "leaflet": "^1.0.3",
     "leaflet.contextmenu": "^1.5.0"
   }
 }
