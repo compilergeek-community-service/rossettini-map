@@ -2,8 +2,8 @@
 <head>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-    <script src="bower_components/leaflet.contextmenu/dist/leaflet.contextmenu.min.js"></script>
-    <link rel="stylesheet" href="bower_components/leaflet.contextmenu/dist/leaflet.contextmenu.min.css"/>
+    <script src="js/leaflet.contextmenu.min.js"></script>
+    <link rel="stylesheet" href="js/leaflet.contextmenu.min.css"/>
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style>
-        .modal-dialog {
+        #modal .modal-dialog {
             width: 90%;
             height: 80%;
         }
@@ -37,6 +37,32 @@
         </div>
     </div>
 
+    <div id="modal-credits" class="modal fade modal-xl" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">License</h4>
+                </div>
+                <div class="modal-body">
+                    <p>This site is created by Yoland Gao.<br>
+                        This work is free, licensed under the Affero General Public License, version 3.
+                        More information can be found <a target="_blank" href="https://github.com/compilergeek-community-service/rossettini-map/blob/master/LICENSE">here</a><br>
+                        Your continued use of the site indicates your agreement to the terms as stated above. <br>
+                        This program is distributed in the hope that it will be useful,<br>
+                        but WITHOUT ANY WARRANTY; without even the implied warranty of<br>
+                        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="agreeButton" class="btn btn-primary" data-dismiss="modal">I Agree, Continue</button>
+                    <button type="button" id="exitButton" class="btn btn-danger">Exit Site</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="run.js"></script>
     <script>
         addMarker(378, 970, "Orchestra Room", "1");
@@ -60,8 +86,22 @@
         addMarker(440, 776, "Breezeway", "19");
         addMarker(607, 244, "Aitchison's Classroom (7th Grade Social Studies)", "20");
         addMarker(431, 397, "Grabb's Classroom", "21");
-
-
     </script>
+    <script>
+        setTimeout(function(){
+            if(localStorage.getItem("agreed") !== "yes"){
+                $('#modal-credits').modal('show');
+            }
+
+            $("#agreeButton").click(function(e){
+                localStorage.setItem("agreed", "yes");
+            });
+
+            $("#exitButton").click(function(e){
+                location.href = "https://google.com";
+            });
+        }, 1000);
+    </script>
+
 </body>
 </html>

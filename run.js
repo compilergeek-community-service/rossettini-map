@@ -26,12 +26,12 @@ function showCoordinates (e) {
 }
 var map = L.map('map', {
     crs: L.CRS.Simple,
-    contextmenu: true,
-    contextmenuWidth: 140,
-    contextmenuItems: [{
-        text: 'Show coordinates',
-        callback: showCoordinates
-    }],
+    // contextmenu: true,
+    // contextmenuWidth: 140,
+    // contextmenuItems: [{
+    //     text: 'Show coordinates',
+    //     callback: showCoordinates
+    // }],
     maxZoom: 1
 });
 var bounds = [[0,0], [848, 1203]];
